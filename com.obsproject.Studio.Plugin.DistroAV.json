@@ -61,61 +61,6 @@
             ]
         },
         {
-            "name": "ffmpeg4.4",
-            "cleanup": [
-                "/include",
-                "/lib/pkgconfig",
-                "/lib/libavcodec.so",
-                "/lib/libavutil.so",
-                "/share/ffmpeg"
-            ],
-            "config-opts": [
-                "--disable-static",
-                "--disable-doc",
-                "--disable-programs",
-                "--disable-devices",
-                "--enable-shared",
-                "--disable-avdevice",
-                "--disable-avformat",
-                "--disable-swresample",
-                "--disable-swscale",
-                "--disable-postproc",
-                "--disable-avfilter",
-                "--enable-pthreads",
-                "--disable-alsa",
-                "--disable-bzlib",
-                "--disable-iconv",
-                "--disable-libxcb-shm",
-                "--disable-libxcb-xfixes",
-                "--disable-libxcb-shape",
-                "--disable-lzma",
-                "--disable-sdl2",
-                "--disable-xlib",
-                "--disable-zlib",
-                "--disable-v4l2-m2m",
-                "--disable-ffnvcodec",
-                "--disable-nvdec",
-                "--disable-nvenc",
-                "--enable-vaapi",
-                "--enable-vdpau",
-                "--enable-libopus",
-                "--enable-libopenh264"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/FFmpeg/FFmpeg.git",
-                    "tag": "n4.4.4",
-                    "commit": "71fb6132637a2a430375c24afc381fff8b854fe7",
-                    "disable-shallow-clone": true
-                },
-                {
-                    "type": "patch",
-                    "path": "0001-mathops-clip-constants-used-with-shift.patch"
-                }
-            ]
-        },
-        {
             "name": "distroav",
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -163,26 +108,26 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "bsdtar -xf Install_NDI_SDK_v5_Linux.tar.gz",
-                        "_target_line=\"$(sed -n '/^__NDI_ARCHIVE_BEGIN__$/=' Install_NDI_SDK_v5_Linux.sh)\"",
+                        "bsdtar -xf Install_NDI_SDK_v6_Linux.tar.gz",
+                        "_target_line=\"$(sed -n '/^__NDI_ARCHIVE_BEGIN__$/=' Install_NDI_SDK_v6_Linux.sh)\"",
                         "_target_line=\"$((_target_line + 1))\"",
-                        "tail -n +\"$_target_line\" Install_NDI_SDK_v5_Linux.sh | tar -zxf - \"NDI SDK for Linux/lib/x86_64-linux-gnu/\" \"NDI SDK for Linux/NDI SDK License Agreement.txt\" \"NDI SDK for Linux/licenses/libndi_licenses.txt\"",
-                        "install -D -m755 \"NDI SDK for Linux/lib/x86_64-linux-gnu/libndi.so.5\".*.* -t ./lib",
+                        "tail -n +\"$_target_line\" Install_NDI_SDK_v6_Linux.sh | tar -zxf - \"NDI SDK for Linux/lib/x86_64-linux-gnu/\" \"NDI SDK for Linux/NDI SDK License Agreement.txt\" \"NDI SDK for Linux/licenses/libndi_licenses.txt\"",
+                        "install -D -m755 \"NDI SDK for Linux/lib/x86_64-linux-gnu/libndi.so.6\".*.* -t ./lib",
                         "install -D -m644 \"NDI SDK for Linux/NDI SDK License Agreement.txt\" -t ./share/licenses",
                         "install -D -m644 \"NDI SDK for Linux/licenses/libndi_licenses.txt\" -t ./share/licenses",
                         "rm -rf \"NDI SDK for Linux\"",
-                        "rm -f Install_NDI_SDK_v5_Linux.*",
+                        "rm -f Install_NDI_SDK_v6_Linux.*",
                         "cd ./lib",
-                        "ln -s libndi.so.5.*.* libndi.so.5"
+                        "ln -s libndi.so.6.*.* libndi.so.6"
                     ]
                 },
                 {
                     "type": "extra-data",
-                    "filename": "Install_NDI_SDK_v5_Linux.tar.gz",
-                    "url": "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/Install_NDI_SDK_v5_Linux.tar.gz",
-                    "sha256": "1cfcc32ee26bc2571c5cbf71e81dafc676e3887e5724a89ce508f49e3c5e0572",
-                    "size": 53865049,
-                    "installed-size": 26212591
+                    "filename": "Install_NDI_SDK_v6_Linux.tar.gz",
+                    "url": "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/Install_NDI_SDK_v6_Linux.tar.gz",
+                    "sha256": "d74a71bc72d86d0d69dcd2924c2d48dd800590f6d84827a75d3116ba4ab2e536",
+                    "size": 60175936,
+                    "installed-size": 27098416
                 }
             ]
         }
