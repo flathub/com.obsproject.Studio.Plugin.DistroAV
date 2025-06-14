@@ -27,5 +27,5 @@ jobs:
           EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --filter-type  ${{ matrix.filter-type }} --update --never-fork com.obsproject.Studio.Plugin.NDI.json
+          args: --filter-type  ${{ matrix.filter-type }} --update --never-fork com.obsproject.Studio.Plugin.DistroAV.json
 
