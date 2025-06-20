@@ -86,12 +86,6 @@
                     }
                 },
                 {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i 's|/usr|/app/plugins/DistroAV/extra|g' src/plugin-main.cpp"
-                    ]
-                },
-                {
                     "type": "file",
                     "path": "com.obsproject.Studio.Plugin.DistroAV.metainfo.xml"
                 }
