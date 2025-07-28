@@ -2,10 +2,9 @@
     "app-id": "com.obsproject.Studio.Plugin.DistroAV",
     "runtime": "com.obsproject.Studio",
     "runtime-version": "stable",
-    "sdk": "org.kde.Sdk//6.6",
+    "sdk": "org.kde.Sdk//6.8",
     "build-extension": true,
     "separate-locales": false,
-    "appstream-compose": false,
     "build-options": {
         "prefix": "/app/plugins/DistroAV"
     },
@@ -67,11 +66,8 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DENABLE_FRONTEND_API=ON",
-                "-DENABLE_QT=ON"
-            ],
-            "post-install": [
-                "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../${FLATPAK_ID}.metainfo.xml",
-                "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}"
+                "-DENABLE_QT=ON",
+                "-DCMAKE_CXX_FLAGS='-Wno-error=deprecated-declarations'"
             ],
             "sources": [
                 {
@@ -90,7 +86,16 @@
                     "commands": [
                         "sed -i 's|/usr|/app/plugins/DistroAV/extra|g' src/plugin-main.cpp"
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "appstream",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
+            ],
+            "sources": [
                 {
                     "type": "file",
                     "path": "com.obsproject.Studio.Plugin.DistroAV.metainfo.xml"
