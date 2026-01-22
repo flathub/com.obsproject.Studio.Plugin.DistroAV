@@ -14,6 +14,7 @@
   </developer>
   <summary>NewTek NDI integration for OBS Studio</summary>
   <url type="homepage">https://github.com/DistroAV/DistroAV</url>
+  <url type="vcs-browser">https://github.com/DistroAV/DistroAV</url>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later AND LicenseRef-proprietary=https://downloads.ndi.tv/SDK/NDI_SDK/NDI%20License%20Agreement.pdf</project_license>
   <releases>
