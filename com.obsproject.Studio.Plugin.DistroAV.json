@@ -130,9 +130,9 @@
                     "type": "extra-data",
                     "filename": "Install_NDI_SDK_v6_Linux.tar.gz",
                     "url": "https://downloads.ndi.tv/SDK/NDI_SDK_Linux/Install_NDI_SDK_v6_Linux.tar.gz",
-                    "sha256": "bae544649fbda6bab8e7695d34ed171611b11e610c919da8fff673a67071fda8",
-                    "size": 61759994,
-                    "installed-size": 27316709
+                    "sha256": "c0b5df17324888627b65217c7b850d750287c52e33e96485e2aa6b11229e603e",
+                    "size": 61787303,
+                    "installed-size": 27316724
                 }
             ]
         }
