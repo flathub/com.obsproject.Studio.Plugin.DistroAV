@@ -18,6 +18,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later AND LicenseRef-proprietary=https://downloads.ndi.tv/SDK/NDI_SDK/NDI%20License%20Agreement.pdf</project_license>
   <releases>
+    <release version="6.2.1" date="2026-04-24">
+      <url type="details">https://github.com/DistroAV/DistroAV/releases/tag/6.2.1</url>
+    </release>
     <release version="6.2.0" date="2026-04-20">
       <url type="details">https://github.com/DistroAV/DistroAV/releases/tag/6.2.0</url>
     </release>
