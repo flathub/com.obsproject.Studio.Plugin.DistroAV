@@ -76,9 +76,13 @@
                     "tag": "6.2.1",
                     "commit": "038d9d6bf8bff36018ffac8ddc3d15f3bb3ef9e8",
                     "x-checker-data": {
-                        "type": "git",
+                        "type": "json",
+                        "url": "https://api.github.com/repos/DistroAV/DistroAV/releases/latest",
+                        "tag-query": ".tag_name",
+                        "version-query": "$tag",
                         "is-main-source": true,
-                        "tag-pattern": "^([\\d.]+)$"
+                        "release-url-template": "https://github.com/DistroAV/DistroAV/releases/tag/$tag",
+                        "timestamp-query": ".published_at"
                     }
                 },
                 {
