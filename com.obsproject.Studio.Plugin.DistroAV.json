@@ -73,8 +73,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/DistroAV/DistroAV.git",
-                    "tag": "6.2.1",
-                    "commit": "038d9d6bf8bff36018ffac8ddc3d15f3bb3ef9e8",
+                    "tag": "6.2.2",
+                    "commit": "d0174935e56ea628a24637342082883900d3ac8e",
                     "x-checker-data": {
                         "type": "git",
                         "is-main-source": true,
