@@ -81,7 +81,7 @@
                         "tag-query": ".tag_name",
                         "version-query": "$tag",
                         "is-main-source": true,
-                        "release-url-template": "https://github.com/DistroAV/DistroAV/releases/tag/$tag",
+                        "release-url-template": "https://github.com/DistroAV/DistroAV/releases/tag/$version",
                         "timestamp-query": ".published_at"
                     }
                 },
