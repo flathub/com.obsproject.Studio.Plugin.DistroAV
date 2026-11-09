@@ -1,6 +1,5 @@
 {
     "app-id": "com.obsproject.Studio.Plugin.DistroAV",
-    "branch": "stable",
     "runtime": "com.obsproject.Studio",
     "runtime-version": "stable",
     "sdk": "org.freedesktop.Sdk//26.08",
@@ -61,19 +60,48 @@
             ]
         },
         {
-            "name": "ffmpeg-compat",
-            "buildsystem": "simple",
+            "name": "ffmpeg7.1",
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
-                "/share"
+                "/lib/libavcodec.so",
+                "/lib/libavutil.so",
+                "/share/ffmpeg"
             ],
-            "build-commands": [
-                "./configure --prefix=/app/plugins/DistroAV --libdir=/app/plugins/DistroAV/lib --disable-static --enable-shared --disable-programs --disable-doc --disable-avdevice --disable-avformat --disable-swscale --disable-postproc --disable-avfilter --disable-network --disable-encoders --disable-muxers --disable-devices --disable-filters --extra-ldflags='-Wl,-rpath,/app/plugins/DistroAV/lib'",
-                "make -j$FLATPAK_BUILDER_N_JOBS",
-                "make install",
-                "ln -s libavcodec.so.61 /app/plugins/DistroAV/lib/libavcodec-ndi.so.61",
-                "ln -s libavutil.so.59 /app/plugins/DistroAV/lib/libavutil-ndi.so.59"
+            "config-opts": [
+                "--disable-static",
+                "--disable-doc",
+                "--disable-programs",
+                "--disable-devices",
+                "--enable-shared",
+                "--disable-avdevice",
+                "--disable-avformat",
+                "--disable-swresample",
+                "--disable-swscale",
+                "--disable-postproc",
+                "--disable-avfilter",
+                "--disable-encoders",
+                "--disable-filters",
+                "--disable-muxers",
+                "--disable-network",
+                "--enable-pthreads",
+                "--disable-alsa",
+                "--disable-bzlib",
+                "--disable-iconv",
+                "--disable-libxcb-shm",
+                "--disable-libxcb-xfixes",
+                "--disable-libxcb-shape",
+                "--disable-lzma",
+                "--disable-sdl2",
+                "--disable-xlib",
+                "--disable-zlib",
+                "--disable-v4l2-m2m",
+                "--disable-ffnvcodec",
+                "--disable-nvdec",
+                "--disable-nvenc",
+                "--enable-vaapi",
+                "--enable-vdpau",
+                "--enable-libopus"
             ],
             "sources": [
                 {
@@ -159,12 +187,7 @@
                         "rm -rf \"NDI SDK for Linux\"",
                         "rm -f Install_NDI_SDK_v6_Linux.*",
                         "cd ./lib",
-                        "ln -s libndi.so.6.*.* libndi.so.6",
-                        "ln -sf /app/plugins/DistroAV/lib/libavcodec.so.61 ./libavcodec.so.61",
-                        "ln -sf /app/plugins/DistroAV/lib/libavutil.so.59 ./libavutil.so.59",
-                        "ln -sf /app/plugins/DistroAV/lib/libswresample.so.5 ./libswresample.so.5",
-                        "ln -sf libavcodec.so.61 ./libavcodec-ndi.so.61",
-                        "ln -sf libavutil.so.59 ./libavutil-ndi.so.59"
+                        "ln -s libndi.so.6.*.* libndi.so.6"
                     ]
                 },
                 {
