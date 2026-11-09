@@ -1,5 +1,6 @@
 {
     "app-id": "com.obsproject.Studio.Plugin.DistroAV",
+    "branch": "stable",
     "runtime": "com.obsproject.Studio",
     "runtime-version": "stable",
     "sdk": "org.freedesktop.Sdk//26.08",
